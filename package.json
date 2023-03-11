@@ -1,0 +1,33 @@
+{
+  "name": "timetracker",
+  "version": "1.0.0",
+  "description": "Time Tracker App use to track the task you do in hours bases.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SushilBhandary/Time-Tracker-App-BackEnd.git"
+  },
+  "author": "sushil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SushilBhandary/Time-Tracker-App-BackEnd/issues"
+  },
+  "homepage": "https://github.com/SushilBhandary/Time-Tracker-App-BackEnd#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
