@@ -9,7 +9,8 @@ const trackerSchema = new mongoose.Schema(
                     type : mongoose.Schema.Types.ObjectId,
                     ref : "tasks"
                 }
-            } ]
+            } ],
+            default : []
         }
     }
 )
