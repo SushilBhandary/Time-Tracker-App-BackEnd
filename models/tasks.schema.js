@@ -5,11 +5,12 @@ const tasksSchema = new mongoose.Schema(
         action : {
             type : [{
                 description : String,
-                startTime : String,
-                endTime : String,
+                startTime : Number,
+                endTime : Number,
                 Urgent : Boolean,
                 Important : Boolean
-            }]
+            }],
+            default : []
         },
         Urgent : {
             type : {
