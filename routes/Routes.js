@@ -10,8 +10,8 @@ const  {
 router.get("/", (req, res) => {
     res.send("Hello auth system")
 })
-router.post("/signup",signUp);
-router.post("/login", login);
-router.post("/logout", auth, logout);
+router.post("/api/auth/signup",signUp);
+router.post("/api/auth/login", login);
+router.post("/api/auth/logout", auth, logout);
 
 module.exports = router;
