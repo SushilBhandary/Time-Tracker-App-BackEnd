@@ -2,6 +2,7 @@ const User = require( '../models/user.schema.js')
 const asyncHandler = require( '../services/asyncHandler')
 const CustomError = require( '../utils/customError')
 const cookieOptions = require( '../Utils/cookieOptions')
+const { createTracker } = require('../controllers/tracker.controllers')
 
 /******************************************************
  * @SIGNUP
@@ -31,7 +32,7 @@ exports.signUp = asyncHandler(async (req, res) => {
     const token = user.getJwtToken()
     console.log(user);
     user.password = undefined
-
+    createTracker(user)
     res.cookie("token", token, cookieOptions)
 
     res.status(200).json({
