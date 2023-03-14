@@ -24,6 +24,12 @@ const tasksSchema = new mongoose.Schema(
                 no : Number 
             }
         },
+        urgentVsImportantMatrix : {
+            yesYes : Number ,
+            noNo : Number ,
+            yesNo : Number ,
+            noYes : Number
+        }, 
         feelingGood : Boolean,
         why : String,
         totalHouseRecoded : Number 
