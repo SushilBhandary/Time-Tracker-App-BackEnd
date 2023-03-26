@@ -1,4 +1,5 @@
 const User = require( '../models/user.schema.js')
+const Tracker = require( '../models/tracker.schema')
 const asyncHandler = require( '../services/asyncHandler')
 const CustomError = require( '../utils/customError')
 const cookieOptions = require( '../Utils/cookieOptions')
@@ -23,16 +24,16 @@ exports.signUp = asyncHandler(async (req, res) => {
     if (existingUser) {
         throw new CustomError('User already exists', 400)  
     }
-
+    const tracker = await Tracker.create({})
     const user = await User.create({
         name,
         email,
-        password
+        password,
+        tracker:tracker._id
     });
     const token = user.getJwtToken()
     console.log(user);
     user.password = undefined
-    createTracker(user)
     res.cookie("token", token, cookieOptions)
 
     res.status(200).json({
