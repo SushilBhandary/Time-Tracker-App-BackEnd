@@ -12,13 +12,13 @@ const CustomError = require( '../utils/customError')
  ******************************************************/
 exports.createTask = asyncHandler( async(req, res) => {
     const {date} = req.body
-    const task = await Task.create()
     const tracker = await Tracker.findById(req.usre.tracker)
     tracker.dayTraker.forEach(element => {
         if (element.date===date) {
             throw new CustomError('Date already exists', 400)
         }
     });
+    const task = await Task.create()
     tracker.dayTraker.push( {
         date : date,
         task : task._id
