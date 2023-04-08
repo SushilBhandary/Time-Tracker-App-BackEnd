@@ -90,6 +90,7 @@ exports.login = asyncHandler(async (req, res) => {
  ******************************************************/
 exports.logout = asyncHandler(async (_req, res) => {
     res.clearCookie()
+    console.log('logout');
     res.status(200).json({
         success: true,
         message: "Logged Out"
