@@ -11,8 +11,7 @@ exports.auth = asyncHandler( async(req, res, next) => {
     }
     try {
         const decodedJwtPayload = JWT.verify(token, config.JWT_SECRET)
-        req.user = await User.findById(decodedJwtPayload._id, "name email role")
-        req.user = decode
+        req.user = await User.findById(decodedJwtPayload._id, "name email tracker")
         return next()
     } catch (error) {
         throw new CustomError('Not authorized to access this route', 401)
