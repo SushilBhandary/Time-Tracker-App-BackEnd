@@ -153,7 +153,6 @@ exports.updatetask = asyncHandler( async(req, res) => {
  * @returns task Object
  ******************************************************/
 exports.gettask = asyncHandler(async(req, res) => {
-    console.log('gettask');
     const { date} = req.body
     const tracker = await Tracker.findById(req.user.tracker)
     let element
@@ -163,7 +162,6 @@ exports.gettask = asyncHandler(async(req, res) => {
         new Date(element.date).getFullYear() === new Date(date).getFullYear() &&
         new Date(element.date).getMonth() === new Date(date).getMonth()) {
             const task = await Task.findById(element.task)
-            console.log(task);
             return res.status(200).json({
                 success: true,
                 message: "Got task",
